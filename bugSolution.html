@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uncommon HTML Bug Solution</title>
+</head>
+<body>
+  <div id="myDiv">
+    This text should be visible.
+  </div>
+
+  <script>
+    const myDiv = document.getElementById('myDiv');
+    myDiv.innerHTML = "<p>This text will replace the div content and creates a new paragraph</p>";
+    // To add more content without overwriting, append it to the parent element
+    const newParagraph = document.createElement('p');
+    newParagraph.textContent = 'This is additional content added correctly.';
+    myDiv.appendChild(newParagraph);
+  </script>
+</body>
+</html>
