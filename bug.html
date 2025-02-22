@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uncommon HTML Bug</title>
+</head>
+<body>
+  <div id="myDiv">
+    This text should be visible.
+  </div>
+
+  <script>
+    // Incorrect use of innerHTML, leading to unexpected behavior
+    document.getElementById('myDiv').innerHTML = "<p>This text will replace the div content and creates a new paragraph</p>";
+    // The following line is incorrect; it attempts to modify an element that no longer exists
+    document.getElementById('myDiv').innerHTML = "<p>This text should not appear</p>";
+  </script>
+</body>
+</html>
